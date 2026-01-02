@@ -35,8 +35,8 @@ function updateThemeIcon(theme) {
 const langToggle = document.getElementById('langToggle');
 const langText = document.getElementById('langText');
 
-// Check for saved language preference or default to 'en'
-let currentLang = localStorage.getItem('language') || 'en';
+// Check for saved language preference or default to 'vi'
+let currentLang = localStorage.getItem('language') || 'vi';
 updateLanguage(currentLang);
 
 langToggle.addEventListener('click', () => {
