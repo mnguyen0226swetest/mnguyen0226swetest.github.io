@@ -705,6 +705,18 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+}
+
+.content-image .carousel-container {
+    width: 100%;
+    max-width: 600px;
+}
+
+.content-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
 }
 
 .image-placeholder {
