@@ -238,41 +238,92 @@ body {
     position: absolute;
     border-radius: 50%;
     filter: blur(80px);
-    opacity: 0.3;
-    animation: float 20s infinite ease-in-out;
+    opacity: 0.4;
+    animation: float 25s infinite ease-in-out;
 }
 
 .orb-1 {
-    width: 500px;
-    height: 500px;
-    background: var(--primary-color);
+    width: 600px;
+    height: 600px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     top: -250px;
     right: -100px;
+    animation: dreamFloat1 40s infinite ease-in-out;
 }
 
 .orb-2 {
-    width: 400px;
-    height: 400px;
-    background: var(--secondary-color);
+    width: 500px;
+    height: 500px;
+    background: linear-gradient(225deg, var(--secondary-color), var(--accent-color));
     bottom: -200px;
     left: -100px;
-    animation-delay: -5s;
+    animation: dreamFloat2 35s infinite ease-in-out;
 }
 
 .orb-3 {
-    width: 300px;
-    height: 300px;
-    background: var(--accent-color);
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(315deg, var(--accent-color), var(--primary-color));
     top: 50%;
     left: 50%;
-    animation-delay: -10s;
+    animation: dreamFloat3 30s infinite ease-in-out;
 }
 
-@keyframes float {
-    0%, 100% { transform: translate(0, 0); }
-    25% { transform: translate(20px, -20px); }
-    50% { transform: translate(-20px, 20px); }
-    75% { transform: translate(20px, 10px); }
+@keyframes dreamFloat1 {
+    0%, 100% { 
+        transform: translate(0, 0) scale(1);
+        opacity: 0.35;
+    }
+    25% { 
+        transform: translate(150px, -120px) scale(1.08);
+        opacity: 0.45;
+    }
+    50% { 
+        transform: translate(-100px, 150px) scale(0.95);
+        opacity: 0.3;
+    }
+    75% { 
+        transform: translate(80px, 60px) scale(1.05);
+        opacity: 0.4;
+    }
+}
+
+@keyframes dreamFloat2 {
+    0%, 100% { 
+        transform: translate(0, 0) scale(1);
+        opacity: 0.4;
+    }
+    33% { 
+        transform: translate(-180px, 140px) scale(1.1);
+        opacity: 0.5;
+    }
+    66% { 
+        transform: translate(160px, -110px) scale(0.92);
+        opacity: 0.35;
+    }
+}
+
+@keyframes dreamFloat3 {
+    0%, 100% { 
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.3;
+    }
+    20% { 
+        transform: translate(calc(-50% + 200px), calc(-50% - 150px)) scale(1.12);
+        opacity: 0.48;
+    }
+    40% { 
+        transform: translate(calc(-50% - 180px), calc(-50% + 180px)) scale(0.88);
+        opacity: 0.32;
+    }
+    60% { 
+        transform: translate(calc(-50% + 140px), calc(-50% + 100px)) scale(1.06);
+        opacity: 0.42;
+    }
+    80% { 
+        transform: translate(calc(-50% - 160px), calc(-50% - 120px)) scale(0.94);
+        opacity: 0.36;
+    }
 }
 
 /* ===================================
