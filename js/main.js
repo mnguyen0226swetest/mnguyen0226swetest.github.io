@@ -241,4 +241,51 @@ window.addEventListener('load', () => {
 // Initialize body visibility
 document.body.style.visibility = 'visible';
 
+// ===================================
+// Carousel Functionality
+// ===================================
+let currentSlideIndex = 1;
+let carouselTimer;
+
+// Initialize carousel when DOM is ready
+if (document.querySelector('.carousel-slide')) {
+    showSlide(currentSlideIndex);
+    startAutoSlide();
+}
+
+function changeSlide(n) {
+    clearInterval(carouselTimer);
+    showSlide(currentSlideIndex += n);
+    startAutoSlide();
+}
+
+function currentSlide(n) {
+    clearInterval(carouselTimer);
+    showSlide(currentSlideIndex = n);
+    startAutoSlide();
+}
+
+function showSlide(n) {
+    const slides = document.querySelectorAll('.carousel-slide');
+    const dots = document.querySelectorAll('.dot');
+    
+    if (!slides.length) return; // Exit if no carousel on page
+    
+    if (n > slides.length) { currentSlideIndex = 1; }
+    if (n < 1) { currentSlideIndex = slides.length; }
+    
+    slides.forEach(slide => slide.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
+    
+    slides[currentSlideIndex - 1].classList.add('active');
+    dots[currentSlideIndex - 1].classList.add('active');
+}
+
+function startAutoSlide() {
+    carouselTimer = setInterval(() => {
+        currentSlideIndex++;
+        showSlide(currentSlideIndex);
+    }, 5000); // Change slide every 5 seconds
+}
+
 console.log('PhdHub Website Loaded Successfully! 🚀');
